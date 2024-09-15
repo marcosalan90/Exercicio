@@ -1,0 +1,27 @@
+public class Tarefa {
+    private String titulo;
+    private String descricao;
+    private String prazo;
+    private int prioridade;
+
+    // Construtor que aceita apenas titulo e prioridade
+    public Tarefa(String titulo, int prioridade) {
+        this.titulo = titulo;
+        this.descricao = "Descrição padrão";
+        this.prazo = "Prazo padrão";
+        if (isPrioridadeValida(prioridade)) {
+            this.prioridade = prioridade;
+        } else {
+            throw new IllegalArgumentException("Prioridade deve ser entre 1 e 5.");
+        }
+    }
+
+    // Método privado para validar a prioridade
+    private boolean isPrioridadeValida(int prioridade) {
+        return prioridade >= 1 && prioridade <= 5;
+    }
+
+    // Outros métodos da classe
+}
+
+// Marcos Alan Braga de Moura - Matricula: 04172381
